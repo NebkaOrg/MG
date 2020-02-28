@@ -1,0 +1,4 @@
+#Tue Feb 25 17:25:16 IRST 2020
+base.0=/Users/romel/Documents/project/test/android/app/build/intermediates/transforms/r8/release/0
+path.0=classes.dex
+renamed.0=classes.dex
