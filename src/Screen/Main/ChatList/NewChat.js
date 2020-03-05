@@ -20,7 +20,7 @@ export default class NewChat extends Component {
                         <TouchableOpacity onPress={() => this.props.navigation.navigate('PrivateChatList')}>
                             <Icon name="user" type="FontAwesome"  style={{color: 'rgb(150,150,150)',fontSize:150,marginBottom:80}}/>
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate('GroupChat')}>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('NewGroupChat')}>
                             <Icon name="users" type="FontAwesome" style={{color: 'rgb(150,150,150)',fontSize:150,marginBottom:60}}/>
                         </TouchableOpacity>
                     </View>

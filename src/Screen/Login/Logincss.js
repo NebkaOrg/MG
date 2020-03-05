@@ -5,6 +5,8 @@
          alignItems:'center',
      },
      texttotal:{
+         marginTop:-30,
+
          width:'90%',
          alignSelf:'center',
      },
@@ -21,7 +23,7 @@
          width: 100,
          height:130,
          alignSelf:'center',
-         marginTop:40,
+         marginTop:20,
      },
      imgsignup:{
          width: 100,

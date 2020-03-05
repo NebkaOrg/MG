@@ -1,40 +1,97 @@
 import React, { Component } from "react";
-import { Button, Text, View } from "react-native";
-import Modal from "react-native-modal";
-import {Footer} from 'native-base'
- 
-export default class ModalTester extends Component {
-  state = {
-    isModalVisible: false,
-    onBackdropPress:false
-  };
- 
-  toggleModal = () => {
-    this.setState({ 
-        isModalVisible: !this.state.isModalVisible,
-        onBackdropPress: !this.state.onBackdropPress
-    });
-  };
+import { Button, Text, View,TouchableOpacity,StyleSheet,Alert} from "react-native";
+import {DocumentPicker,DocumentPickerUtil} from 'react-native-document-picker';
 
-  //TODO: peyman test 
- 
+
+
+export default class ModalTester extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      singleFileOBJ:'',
+    };
+  }
+
+    SingleFilePicker() {
+    try {
+       DocumentPicker.show({
+        filetype: [DocumentPickerUtil.allFiles()],
+      
+      },(eror,res)=>{
+
+        this.setState({ singleFileOBJ: res })
+
+      });
+
+
+
+    } 
+    catch{
+     console.warn("1")
+      }
+    
+  }
+
+
   render() {
     return (
-      <View style={{ flex: 1 }}>
-        <Button title="Show modal" onPress={this.toggleModal} />
-        <Modal isVisible={this.state.isModalVisible}
-        onBackdropPress={this.toggleModal}
-        backdropColor="white"
-        animationInTiming={500}
-        animationOutTiming={500}
-        style={{justifyContent:'flex-end'}}
-        >
-            <View style={{ height:200,backgroundColor:"black",marginTop:50}}>
-            <Text>Hello!</Text>
-            <Button title="Hide modal" onPress={this.toggleModal} />
-          </View>
-        </Modal>
-      </View>
+      <View style={styles.MainContainer}>
+ 
+      <Text style={styles.text}>
+        File Name: {this.state.singleFileOBJ.name ? this.state.singleFileOBJ.name : ''}
+      </Text>
+
+      <Text style={styles.text}>
+        file Type: {this.state.singleFileOBJ.type ? this.state.singleFileOBJ.type : ''}
+      </Text>
+
+      <Text style={styles.text}>
+        File Size: {this.state.singleFileOBJ.size ? this.state.singleFileOBJ.size : ''}
+      </Text>
+
+      <Text style={styles.text}>
+        File URI: {this.state.singleFileOBJ.uri ? this.state.singleFileOBJ.uri : ''}
+      </Text>
+
+      <TouchableOpacity
+        activeOpacity={0.5}
+        style={styles.button}
+        onPress={()=>this.SingleFilePicker()}>
+        <Text style={styles.buttonText}>
+          Click Here To Pick File
+        </Text>
+      </TouchableOpacity>
+
+    </View>
     );
   }
 }
+const styles = StyleSheet.create({
+  MainContainer: {
+    flex: 1,
+    backgroundColor: '#fff',
+    padding: 16,
+    justifyContent: 'center',
+  },
+
+  button: {
+    width: '100%',
+    backgroundColor: '#0091EA',
+    borderRadius:9,
+  },
+
+  buttonText: {
+    color: '#fff',
+    fontSize: 21,
+    padding: 10,
+    textAlign: 'center'
+  },
+
+  text: {
+    color: '#000',
+    fontSize: 16,
+    padding: 10,
+    textAlign: 'left'
+  },
+});

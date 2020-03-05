@@ -289,7 +289,9 @@ export default class PrivateChatList extends Component {
         return (
             <Container>
                 <Header style={MainCss.header}>
-                    <Text></Text>
+                <TouchableOpacity onPress={() => this.props.navigation.goBack()}>
+                        <Icon name="arrowleft" type="AntDesign" style={{ color: '#faa61a' }} />
+                    </TouchableOpacity>
                     <Title>private Chat List</Title>
                     <Text></Text>
                 </Header>

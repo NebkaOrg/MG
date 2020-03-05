@@ -30,6 +30,10 @@ target 'test' do
 
   pod 'react-native-image-picker', :path => '../node_modules/react-native-image-picker'
 
+  pod 'RNFileViewer', :path => '../node_modules/react-native-file-viewer'
+
+  pod 'react-native-document-picker', :path => '../node_modules/react-native-document-picker'
+
   target 'testTests' do
     inherit! :search_paths
     # Pods for testing

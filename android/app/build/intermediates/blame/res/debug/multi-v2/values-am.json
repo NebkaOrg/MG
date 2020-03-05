@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/romel/Documents/project/test/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-am/values-am.xml",
+            "outputFile": "/Users/romel/Documents/project/MG/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-am/values-am.xml",
             "map": [
                 {
                     "source": "/Users/romel/.gradle/caches/transforms-2/files-2.1/5145a8f6f099b6dec504123b6a2b5075/res/values-am/values-am.xml",

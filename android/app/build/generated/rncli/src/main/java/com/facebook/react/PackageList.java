@@ -13,6 +13,8 @@ import java.util.ArrayList;
 import com.test.BuildConfig;
 import com.test.R;
 
+// react-native-document-picker
+import com.reactnativedocumentpicker.ReactNativeDocumentPicker;
 // react-native-gesture-handler
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 // react-native-image-picker
@@ -52,6 +54,7 @@ public class PackageList {
   public ArrayList<ReactPackage> getPackages() {
     return new ArrayList<>(Arrays.<ReactPackage>asList(
       new MainReactPackage(),
+      new ReactNativeDocumentPicker(),
       new RNGestureHandlerPackage(),
       new ImagePickerPackage(),
       new ReanimatedPackage()

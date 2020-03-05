@@ -3,7 +3,7 @@ import {View, Text, Image, TouchableOpacity} from 'react-native';
 import {Container, Header, Content, Title, Thumbnail,Icon} from 'native-base';
 import {TextField} from 'react-native-material-textfield';
 import Logincss from './Logincss';
-
+import server_connection from '../../../server_connection';
 export default class SignIn extends Component {
     constructor() {
         super();
@@ -42,7 +42,7 @@ export default class SignIn extends Component {
         });
     }
     login() {
-        var user = this.state.username;
+        var name = this.state.username;
         var email = this.state.EorN;
         var pass = this.state.password;
         var repetpass = this.state.repetpass;
@@ -52,7 +52,7 @@ export default class SignIn extends Component {
             usereror: '',
             repeteror:''
         });
-        if (user === '') {
+        if (name === '') {
             this.setState({
                 usereror: 'ایمیل نمیتواند خالی باشد',
             });
@@ -69,8 +69,10 @@ export default class SignIn extends Component {
                 repeteror: 'یکسان نیست',
             });
         }else {
-            //server
+          const a =    server_connection.register('mahsa', 'pmaasn@gmail.com', '1234567890');
+            console.warn(a)
         }
+        
     }
 
 

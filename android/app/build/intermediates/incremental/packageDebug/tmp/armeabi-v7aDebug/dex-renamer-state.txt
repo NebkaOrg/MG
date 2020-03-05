@@ -1,4 +1,4 @@
-#Mon Feb 24 23:10:21 IRST 2020
-base.0=/Users/romel/Documents/project/test/android/app/build/intermediates/transforms/dexMerger/debug/0
+#Wed Mar 04 22:40:01 IRST 2020
+base.0=/Users/romel/Documents/project/MG/android/app/build/intermediates/transforms/dexMerger/debug/0
 path.0=classes.dex
 renamed.0=classes.dex
